@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Теги форм</title>
+</head>
+<body>
+
+контейнер для элементов формы:
+<form action="обработчик" method="метод_отправки_данных" enctype="multipart/form-data">
+    action - указывает обработчик данных формы на сервере
+    method - метод, которым будут отправлены данные формы (post / get)
+    enctype="multipart/form-data" - указывается, если в форме есть поле для загрузки файлов
+    Доступны дополнительные атрибуты: autocomplete / disabled / name
+
+    <fieldset> группирует связанные элементы в форме, отображается в виде рамки вокруг них
+        Для fieldset доступны дополнительные атрибуты: name / disabled
+        <legend>заголовок связанных элементов формы</legend>
+
+        <label for="select">Текстовая метка для элемента</label>
+        for - привязывает label к элементу списка по id
+        <select id="select" multiple size="2"> выпадающий список
+            <optgroup label="название группы"> группировка элементов списка
+                <option value="значение1" selected>первый элемент списка</option>
+                <option value="значение2">второй элемент списка</option>
+                <option value="значение3">третий элемент списка</option>
+            </optgroup>
+        </select>
+        multiple - доступен множественный выбор
+        size - количество отображаемых элементов
+        selected - элемент отображается, как выбранный по-умолчанию
+        Для списков доступны дополнительные атрибуты: autofocus / disabled / required / name / value
+
+        <textarea cols="10" rows="5" wrap="soft"></textarea> поле для ввода многострочного ввода текста
+        cols - чило колонок
+        rows - чило строк
+        wrap="hard|soft|off" - перенос длинного текста - перенос может сохранятся при отправке на сервер (hard),
+        перенесенный автоматически текст будет передаваться одной строкой (soft),
+        вместо переноса будет появляться полоса прокрутки (off)
+        Для textarea доступны дополнительные атрибуты: autofocus / readonly / disabled / required
+                            maxlength / minlength / placeholder / name / value
+
+        <input type=""> элемент формы. Отображение зависит от значения атрибута type:
+        Label можно привязывать к элементам на только по id, но и вклыдываю input в label
+        <label>Текстовая метка
+            <input type="">
+        </label>
+
+        <input type="text"> для ввода текта
+        <input type="password"> для ввода пароля / скрывает вводимый текст
+        <input type="email"> для ввода email / валидация входных данных
+        <input type="search"> для поиска
+        <input type="url"> для ввода url / валидация входных данных
+        Для текстовых input доступны дополнительные атрибуты: autocomplete / autofocus / placeholder / readonly / disabled
+                               required / pattern / maxlength / minlength / name / value
+
+        <input type="number"> для ввода чилел
+        <input type="range"> ползунок
+        Для числовых input доступны дополнительные атрибуты: autocomplete / autofocus / placeholder (только type="number")
+                           readonly / disabled / required  / pattern / max / min / step / name / value
+
+        <input type="file" multiple accept="image/*">
+        multiple - загрузка нескольких файлов
+        accept - ограничение типа загружаемого файла
+        Для input type="file" доступны дополнительные атрибуты: name / disabled / required / autofocus
+
+        С полями для получения даты и времени следут быть осторожнее. Они по-разному отображаются в различных браузерах
+        и не отображается в старых браузерах. Лучше использовать js библиотеки для формирования подобных полей
+        <input type="time"> получение времени
+        <input type="date"> получение даты
+        <input type="datetime-local"> получение даты и времени
+        <input type="week"> получение недели
+        <input type="month"> получение месяца
+        Для полей ввода даты и времени дополнительные атрибуты: autofocus / readonly / disabled / required
+                                                                max / min / name / value
+
+        <input type="color"> взятие цвета
+
+        <input type="hidden"> скрытое поле
+
+        <input type="checkbox" checked> одиночный флажок
+        <input type="radio" checked> одиночная радиокнопка
+        checked - флажок или радиокнопка отображаются, как выбранные по-умолчанию
+        Группа флажков (данные будут отправлены на сервер массивом):
+        <input type="checkbox" name="checkbox_name[]">
+        <input type="checkbox" name="checkbox_name[]">
+        <input type="checkbox" name="checkbox_name[]">
+        Группа радиокнопок (для выбора одного из нескольких значений):
+        <input type="radio" name="radio_name">
+        <input type="radio" name="radio_name">
+        <input type="radio" name="radio_name">
+        Для чекбоксов и радоикнопок доступны дополнительные атрибуты: value / name / disabled / required / autofocus
+
+        Кнопки (тег input):
+        <input type="button" value="Просто кнопка">
+        <input type="reset" value="Кнопка очистки полей формы">
+        <input type="submit" value="Кнопка отправки данных формы на обработчик, указанный в action">
+
+        Кнопки (тег button):
+        <button type="button">Просто кнопка</button>
+        <button type="reset">Кнопка очистки полей формы</button>
+        <button type="submit">Кнопка отправки данных формы на обработчик, указанный в action</button>
+
+        Описание дополнительных атрибутов:
+        autocomplete="on|off" - запоминание данных, введенных в текстовое поле
+        autofocus - фокусировка на поле при загрузке страницы
+        placeholder - подсказка
+        readonly - не позволяет изменять значение поля (выделение и копирование текста доступны)
+        disabled - отключает возможость редактирования и копирования содержимого поля
+        required - поле обязательно для заполнения
+        pattern - проверяет поле на сответствие регулярному выражению
+        maxlength - ограничивает ввод текстовых данных
+        minlength - ограничивает ввод текстовых данных
+        max - ограничивает ввод числовых данных
+        min - ограничивает ввод числовых данных
+        step - шаг при вводе числовых данных
+        name - имя, которое будет использовано для доступа к элементу
+        value - текст, отображаемый на кнопке, в поле или связанный с полем текст
+    </fieldset>
+</form>
+
+</body>
+</html>
