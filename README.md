@@ -37,6 +37,12 @@
         4. 4я строка - текст статьи
         5. 5я строка - ссылка "Читать далее" на страницу со статьей (ссылку оформить в виде кнопки, используя стили)     
 
+### Занятие 4
+   1. [Grid Layout](grid-layout/grid.html)
+   2. [Grid Garden](https://cssgridgarden.com/#ru)
+#### Домашнее задание к занятию 4
+   1. Сверстать 1 страницу сайта, используя grid-layout технологию  
+
 ### Ссылки
    1. [Web Reference](https://webref.ru/)
    2. [w3schools](https://www.w3schools.com/)
