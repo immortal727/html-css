@@ -40,8 +40,8 @@
 ### Занятие 4
    1. [Grid Layout](grid-layout/grid.html)
    2. [Grid Garden](https://cssgridgarden.com/#ru)
-#### Домашнее задание к занятию 4
-   1. Сверстать 1 страницу сайта, используя grid-layout технологию  
+
+
 
 ### Ссылки
    1. [Web Reference](https://webref.ru/)
