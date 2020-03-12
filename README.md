@@ -41,12 +41,19 @@
    1. [Grid Layout](grid-layout/grid.html)
    2. [Grid Garden](https://cssgridgarden.com/#ru)
 
-### Занятие 4
+### Занятие 5
    1. [Flex Box](flexbox/flexbox.html)
    2. [Шпаргалка](https://tpverstak.ru/flex-cheatsheet/)
    3. [Flexbox Froggy](https://flexboxfroggy.com/#ru)
-#### Домашнее задание к занятию 4
-   1. Сверстать 2 страницы сайта, используя flex-box технологию  
+#### Домашнее задание к занятию 5
+   1. Сверстать страницы блога, используя flex-box технологию  
+
+### Занятие 6
+   1. [Псевдоклассы / Псевдоэлементы](pseudo.css)
+#### Домашнее задание к занятию 6
+   1. Сверстать выпадающее меню
+   2. Стилизовать форму из домашнего задания №2 (используйте селекторы атрибутов и псевдоклассы, псевдоэлементы before/after)
+
 
 ### Ссылки
    1. [Web Reference](https://webref.ru/)
