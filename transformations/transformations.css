@@ -1,0 +1,195 @@
+.shadow{
+    height: 300px;
+    width: 300px;
+    /*тень блока: горизонтально (+|-) вертикально (+|-) радиус размытия (+) растяжение цвет (черная по-умолчанию)*/
+    box-shadow: 5px 10px 10px 2px #333333;
+}
+/* Анимация перехода элемента из одного состояние в другое */
+.transition {
+    opacity: .5;
+
+    /*свойства переходов*/
+    transition-property: opacity;
+    /*время перехода*/
+    transition-duration: 2s; /*ms*/
+    /*переход с задержкой*/
+    transition-delay: 2s; /*ms*/
+    /**/
+    transition-timing-function: ease;
+    /*transition-timing-function: linear;*/
+    /*transition-timing-function: ease-in;*/
+    /*transition-timing-function: ease-out;*/
+    /*cubic-bezier();*/
+
+    /*универсальное свойство*/
+    /*transition: transition-property transition-duration transition-timing-function transition-delay;*/
+    transition: opacity 2s ease 2s;
+}
+
+.transition:hover {
+    opacity: 1;
+}
+
+.transition-2 {
+    height: 200px;
+    width: 200px;
+    border-radius: 200px;
+    background: green;
+
+    transition-property: width, height;
+    transition-duration: 2s;
+}
+
+.transition-2:hover {
+    height: 300px;
+    width: 300px;
+}
+
+.translate {
+    height: 200px;
+    width: 200px;
+    background: gray;
+
+    transition: transform 2s;
+}
+
+.translate:hover {
+    /*сдвиг по x и y */
+    transform: translate(20px, 30px);
+    transform: translateX(20px);
+    transform: translateY(30px);
+}
+
+
+.scale{
+    height: 200px;
+    width: 200px;
+    background: plum;
+}
+
+.scale:hover {
+    /*масштабирование*/
+    /*значения от 0 до 1 уменьшают элемент*/
+    transform: scale(.4, .7);
+    transform: scaleX(.4);
+    transform: scaleY(.7);
+    transform: scaleX(1.5); /*увеличение*/
+    transition: transform 2s;
+}
+
+.rotate {
+    height: 200px;
+    width: 200px;
+    /*background: green;*/
+    /*-25deg - поворот против часовой стрелки*/
+    transform: rotate(25deg);
+}
+
+.skew {
+    height: 200px;
+    width: 200px;
+    background: green;
+
+    /*transform: skew(8deg, 7deg);*/
+    /*transform: skewY(20deg);*/
+    transform: skewX(20deg);
+    transition: transform 2s;
+    /*смещает ось трансформации по x и y*/
+    transform-origin: 20px 10px;
+}
+
+
+.animation {
+    position: absolute;
+    top: 0;
+    left: 150px;
+    padding: 10px 30px;
+    background: yellow;
+
+
+    /* имя анимации */
+    animation-name: animName;
+
+    /*продолжительность*/
+    animation-duration: 15s;
+    animation-timing-function: ease-in-out;
+    /* задержка анимации */
+    animation-delay: 3s;
+    /*сколько раз будет повторяться анимация*/
+    animation-iteration-count: infinite; /*2*/
+    /*направление повтора анимаци*/
+    animation-direction: alternate;
+    /*alternate  reverse  alternate-reverse*/
+}
+
+/*установка кадров анимации*/
+@keyframes animName {
+    from, to {
+        top: 0;
+        left: 150px;
+    }
+
+    25%, 75% {
+        top: 100%;
+        left: 300%;
+    }
+
+    75% {
+        background: black;
+    }
+
+    90% {
+        background: red;
+    }
+
+    100% {
+        top: 50%;
+    }
+}
+
+
+
+ul li {
+    list-style-type: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-bottom: 5px;
+    background: plum;
+}
+
+.color-1 {
+    /*
+    animation-name
+    animation-duration
+    animation-timing-function
+    animation-delay
+    animation-iteration-count
+    animation-direction
+    */
+    animation: color1 2s;
+}
+
+.color-2 {
+    animation: color2 2s ease 2s;
+}
+
+.color-3 {
+    animation: color3 2s ease 4s;
+}
+
+@keyframes color1 {
+    100% {
+        background: red;
+    }
+}
+@keyframes color2 {
+    100% {
+        background: yellow;
+    }
+}
+@keyframes color3 {
+    100% {
+        background: green;
+    }
+}
